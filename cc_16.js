@@ -9,7 +9,7 @@ function fetchProductsThen() {
     })
     .then(data => {
         data.forEach(product => {
-            console.log(fetchProductsThen.fields.name);
+            console.log(products.fields.name);
         });
     })
     .catch(error => {
@@ -39,7 +39,7 @@ function displayProducts(products) {
     container.innerHTML = "";
 
 //choosing the first 5 products 
-product.slice(0,5).forEach(product => {
+products.slice(0,5).forEach(product => {
     const {name, price, image } = product.fields;
 
 // creating product card 
@@ -48,7 +48,7 @@ productCard.classList.add("product-card");
 
 //appending image,name and price 
 const img = document.createElement("img");
-img.src = image[1].url;
+img.src = image[0].url;
 img.alt = name;
 productCard.appendChild(img);
 
